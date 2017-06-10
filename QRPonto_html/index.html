@@ -1,0 +1,21 @@
+<head>
+	
+	<script type="text/javascript" src="assets/libs/qrcodejs/qrcode.js"></script>
+</head>
+
+<body>
+
+	<div>
+		<form action="/login">
+			<input type="text">
+			<input type="password">
+			<input type="submit">
+		</form>
+
+	</div>
+	<div id="qrcode"></div>
+	<script type="text/javascript">
+		new QRCode(document.getElementById("qrcode"), "dadas");
+	</script>
+
+</body>
