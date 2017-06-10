@@ -27,7 +27,7 @@
 		<form action="/login">
 			<input type="text">
 			<input type="password">
-			<input id="file" type="file" name="image" accept="image/*"/>
+			<input id="file" type="file" name="image" onchange="decode()" accept="image/*" capture/>
 			<input type="submit" onclick="decode()">
 		</form>
 
