@@ -1,6 +1,24 @@
 <head>
-	
+	<script type="text/javascript" src="assets/libs/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="assets/libs/qrcodejs/qrcode.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/grid.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/version.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/detector.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/formatinf.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/errorlevel.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/bitmat.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/datablock.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/bmparser.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/datamask.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/rsdecoder.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/gf256poly.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/gf256.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/decoder.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/qrcode.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/findpat.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/alignpat.js"></script>
+	<script type="text/javascript" src="assets/libs/jsqrcode/src/databr.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
 </head>
 
 <body>
@@ -9,7 +27,8 @@
 		<form action="/login">
 			<input type="text">
 			<input type="password">
-			<input type="submit">
+			<input id="file" type="file" name="image" accept="image/*"/>
+			<input type="submit" onclick="decode()">
 		</form>
 
 	</div>
@@ -17,5 +36,6 @@
 	<script type="text/javascript">
 		new QRCode(document.getElementById("qrcode"), "dadas");
 	</script>
+	<img id="uploaded" src=""/>
 
 </body>
