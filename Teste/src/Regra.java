@@ -19,6 +19,11 @@ public class Regra {
             expressoes.add(expr);
             return this;
         }
+        public Builder comExpressao(List<Expressao> expr)
+        {
+            expressoes.addAll(expr);
+            return this;
+        }
 
         public Builder comEnvio(Executor executor)
         {

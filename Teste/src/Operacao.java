@@ -2,6 +2,7 @@ import java.util.Stack;
 
 public abstract class Operacao implements Expressao {
     protected String simbolo;
+    protected String resultado;
 
     protected Expressao esqOperador = null;
     protected Expressao dirOperador = null;

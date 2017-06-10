@@ -1,4 +1,8 @@
+import sun.security.x509.AVA;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,25 +28,34 @@ public class Pessoal {
     public void setDiasTrabalhados(int diasTrabalhados) {
         this.diasTrabalhados = diasTrabalhados;
     }
+    public void aumentaSalarioPerc(int perc){
+        this.salario = salario + salario * perc / 100;
+    }
 
     public void avaliar(){
+        String funcaoAplicar = "aumentarSalario" ;
+        String modificadorFuncao = "10";
+        List<Expressao> le = new ArrayList<Expressao>();
+        List<String> expressoes = new ArrayList<String>();
+        expressoes.add("SALARIO > 1000 AND CARGO = 'SUP'");
+        expressoes.add("SALARIO = 1000 AND CARGO = 'DIR'");
 
-
-        // definindo as regras
-        Expressao ex1 = Avaliador.stringEntrada("SALARIO > 1000 AND CARGO = 'SUP'");
-
+        for (String exp:expressoes) {
+            le.add(Avaliador.stringEntrada(exp));
+        }
 
         // acoes a serem executadas
-        Executor aumentarSlario = new ExecutaA();
+        Executor execut = new ExecutaA(this,funcaoAplicar,modificadorFuncao);
 
         // criando regra com expressao e acao
         Regra rule1 = new Regra.Builder()
-                .comExpressao(ex1)
-                .comEnvio(aumentarSlario)
+                .comExpressao(le)
+                .comEnvio(execut)
                 .criar();
 
-
         Map<String, String> bindings = new HashMap<>();
+
+
         bindings.put("SALARIO", "1001");
         bindings.put("CARGO", "'SUP'");
 

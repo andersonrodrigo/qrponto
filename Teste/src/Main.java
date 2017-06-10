@@ -18,6 +18,7 @@ public class Main {
         operacoes.registrarOperacao(new Maior());
         Pessoal p = new Pessoal();
 
+        p.setSalario(1000);
         p.avaliar();
 
 
