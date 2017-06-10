@@ -1,5 +1,5 @@
 
-package br.com.qrcode.rest;
+package br.com.qrponto.rest;
 
 import java.util.Set;
 import javax.ws.rs.core.Application;
@@ -15,7 +15,7 @@ public class ApplicationConfig extends Application {
     }
 
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(br.com.qrcode.rest.QrPontoResource.class);
+        resources.add(br.com.qrponto.rest.QrPontoResource.class);
     }
     
 }
